@@ -1,13 +1,17 @@
+#Definimos una clase Vector
 class vector:
-
+    
+    #Constructor
     def __init__(self, x, y ,z) -> None:
         self.x = x
         self.y = y
         self.z = z
-
+    
+    #Funcion para comparar
     def __eq__(self, other):
         return ((self.x == other.x) and (self.y == other.y) and (self.z == other.z))
-
+    
+    #Funcion para definir la operación suma, verificamos si es un numero o si es un vector para saber como proceder
     def __add__(self, other):
         suma = vector(0,0,0)
         if isinstance(other, int) or isinstance(other, float):
@@ -22,7 +26,8 @@ class vector:
         else:
             pass
         return suma
-
+    
+    #Funcion para definir la operación resta, verificamos si es un numero o si es un vector para saber como proceder
     def __sub__(self, other):
         resta = vector(0,0,0)
         if isinstance(other, int) or isinstance(other, float):
@@ -37,7 +42,8 @@ class vector:
         else:
             pass
         return resta
-
+    
+    #Funcion para definir la operación multiplicacion, verificamos si es un numero o si es un vector para saber como proceder
     def __mul__(self, other):
         mult = vector(0,0,0)
         if isinstance(other, int) or isinstance(other, float):
@@ -52,7 +58,8 @@ class vector:
         else:
             pass
         return mult
-
+    
+    #Funcion para definir la operación mod, verificamos si es un numero o si es un vector para saber como proceder
     def __mod__(self, other):
         modul = vector(0,0,0)
         if isinstance(other, int) or isinstance(other, float):
@@ -71,7 +78,7 @@ class vector:
         else:
             pass
         
-
+    #Funcion Print para poder hacer pruebas
     def print(self):
         print(self.x)
         print(self.y)
