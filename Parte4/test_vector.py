@@ -1,8 +1,10 @@
 import unittest
 from vector import vector
 
+#ESTAS SON LAS PRUEBAS UNITARIAS, ADEMAS DE ALGUNOS CASOS GENERALES CON MULTIPLES OPERANDOS
 class TestVector(unittest.TestCase):
-
+    
+    #PRUEBAS DE LA SUMA
     def test_add(self):
         vectorA = vector(2.4,5.7, 0.1)
         vectorB = vector(1,2.4, 0.76)
@@ -25,7 +27,8 @@ class TestVector(unittest.TestCase):
         result = vector(29 + -29,5.7 + -29 , 16 + -29)
         
         self.assertEqual(vectorA + -29, result)
-
+    
+    #PRUEBAS DE LA RESTA
     def test_sub(self):
         vectorA = vector(2.4,5.7, 0.1)
         vectorB = vector(1,2.4, 0.76)
@@ -48,7 +51,8 @@ class TestVector(unittest.TestCase):
         result = vector(29 - -29,5.7 - -29 , 16 - -29)
         
         self.assertEqual(vectorA - -29, result)
-
+    
+    #PRUEBAS DE LA MULTIPLICACION
     def test_mult(self):
         vectorA = vector(2.4,5.7, 0.1)
         vectorB = vector(1,2.4, 0.76)
@@ -76,7 +80,7 @@ class TestVector(unittest.TestCase):
         
         self.assertEqual(vectorA * -29, result)
 
-
+    #PRUEBAS DEL MOD
     def test_mod(self):
         vectorA = vector(2.4,5.7, 0.1)
         vectorB = vector(1,2.4, 0.76)
@@ -112,7 +116,8 @@ class TestVector(unittest.TestCase):
         self.assertEqual(vectorA % 7, result)
         
         self.assertRaises(ValueError, vector.__mod__,vectorA ,0)
-
+    
+    #PRUEBAS CON MUTIPLES OPERANDOS
     def test_alltogether(self):
         
         vectorA = vector(2.4,5.7, 0.1)
